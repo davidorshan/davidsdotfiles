@@ -1,0 +1,206 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Sets how many lines of history VIM has to remember
+set history=700
+
+" Enable filetype plugins
+filetype on
+filetype plugin on
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+" let mapleader = ","
+" let g:mapleader = ","
+"
+" Fast saving
+":noremap <silent> <C-S> <Esc>:update<CR>
+":inoremap <silent> <C-S> <Esc>:update<CR>
+" This is totally awesome - remap jj to escape in insert mode.  You'll never type jj anyway, so it's great!
+inoremap jj <Esc>
+nnoremap JJJJ <Nop>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => VIM user interface
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set 7 lines to the cursor - when moving vertically using j/k
+set so=7
+
+" Turn on the WiLd menu
+set wildmenu
+
+" Ignore compiled files
+" set wildignore=*.o,*~,*.pyc
+
+"Always show current position
+set ruler
+
+" Height of the command bar
+set cmdheight=2
+
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
+" Ignore case when searching
+set ignorecase
+
+" When searching try to be smart about cases 
+set smartcase
+
+" Highlight search results
+set hlsearch
+
+" Makes search act like search in modern browsers
+set incsearch
+
+" Don't redraw while executing macros (good performance config)
+set lazyredraw
+
+" For regular expressions turn magic on
+set magic
+
+" Show matching brackets when text indicator is over them
+" set showmatch
+" How many tenths of a second to blink when matching brackets
+set mat=2
+
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set tm=500
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Colors and Fonts
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Enable syntax highlighting
+syntax enable
+set grepprg=grep\ -nH\ $*
+"on enter in command mode get rid of syntax highlighting"
+nnoremap <CR> :noh<CR><CR>
+let g:jellybeans_use_lowcolor_black = 0
+colorscheme jellybeans
+set background=dark
+
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Files, backups and undo
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set nowritebackup
+set nowb
+set noswapfile
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Text, tab and indent related
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use spaces instead of tabs
+set expandtab
+
+" Be smart when using tabs ;)
+set smarttab
+
+" 1 tab == 4 spaces
+set shiftwidth=4
+set tabstop=4
+
+" Linebreak on 500 characters
+set lbr
+set tw=500
+
+set ai "Auto indent
+set si "Smart indent
+set wrap "Wrap lines
+
+" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search) commented out
+" because space toggles folds
+" map <space> /
+" map <c-space> ?
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Editing mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Remap VIM 0 to first non-blank character
+map 0 ^
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"COOL THINGS I FOUND OF STACKOVERFLOW
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'
+set nocompatible
+
+" This shows what you are typing as a command.  I love this!
+set showcmd
+
+" Folding Stuffs
+set foldmethod=marker
+
+" Use english for spellchecking, but don't spellcheck by default
+if version >= 700
+   set spl=en spell
+   set nospell
+endif
+
+" Real men use gcc
+compiler gcc
+
+" set up wildmenu
+set wildmenu
+set wildmode=longest:full,full
+
+" Line Numbers PWN!
+set number
+
+" Since I use linux, I want this
+let g:clipbrdDefaultReg = '+'
+
+" Set off the other paren
+highlight MatchParen ctermbg=4
+" }}}
+
+" Next Tab
+nnoremap <silent> <C-Right> :tabnext<CR>
+
+" Previous Tab
+nnoremap <silent> <C-Left> :tabprevious<CR>
+
+" New Tab
+nnoremap <silent> <C-t> :tabnew<CR>
+
+" Up and down are more logical with g..
+nnoremap <silent> k gk
+nnoremap <silent> j gj
+inoremap <silent> <Up> <Esc>gka
+inoremap <silent> <Down> <Esc>gja
+
+" Space will toggle folds!
+nnoremap <space> za
+
+" Search mappings: These will make it so that going to the next one in a
+" search will center on the line it's found in.
+map N Nzz
+map n nzz
+
+" Swap ; and :  Convenient.
+nnoremap ; :
+nnoremap : ;
+
+filetype plugin indent on
+syntax on
+
+highlight LineNr ctermfg=darkgrey
+
+"make folding work
+set foldmethod=syntax
+
