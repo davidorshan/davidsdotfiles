@@ -2,7 +2,6 @@
 
 export TRACKED=$HOME/davidsdotfiles
 export ITS_ME_DAVID=1
-alias ssh="ssh -F $TRACKED/config/ssh_config"
 VIMRC=$TRACKED/config/vimrc
 alias vim="vim -u $VIMRC"
 set -o vi
