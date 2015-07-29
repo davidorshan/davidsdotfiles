@@ -214,3 +214,4 @@ highlight LineNr ctermfg=darkgrey
 "make folding work
 set foldmethod=syntax
 
+set nosmartindent
