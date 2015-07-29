@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
-echo "[[ -n \$ITS_ME_DAVID]] && source \$HOME/davidsdotfiles/config/rc_bash" >> ~/.bashrc
-source $HOME/davidsdotfiles/config/rc_bash
+echo "[[ -n \$ITS_ME_DAVID ]] && source \$HOME/davidsdotfiles/config/rc_bash" >> ~/.bashrc
+. $HOME/davidsdotfiles/config/rc_bash
