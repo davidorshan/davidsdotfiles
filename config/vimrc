@@ -1,3 +1,12 @@
+set nocompatible
+
+let tracked = $TRACKED
+if empty(tracked)
+  let tracked = expand('<sfile>:p:h')
+endif
+let vim_home = $TRACKED . '/config'"
+
+"let $VIMRUNTIME = vim_home . '/.vim'"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -7,6 +16,7 @@ set history=700
 " Enable filetype plugins
 filetype on
 filetype plugin on
+filetype indent on
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -138,7 +148,6 @@ map 0 ^
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "COOL THINGS I FOUND OF STACKOVERFLOW
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'
-set nocompatible
 
 " This shows what you are typing as a command.  I love this!
 set showcmd
@@ -196,7 +205,8 @@ map n nzz
 nnoremap ; :
 nnoremap : ;
 
-filetype plugin indent on
+"filetype plugin indent on"
+
 syntax on
 
 highlight LineNr ctermfg=darkgrey

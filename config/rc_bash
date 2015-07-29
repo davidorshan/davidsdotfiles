@@ -3,5 +3,5 @@
 export TRACKED=$HOME/davidsdotfiles
 export ITS_ME_DAVID=1
 VIMRC=$TRACKED/config/vimrc
-alias vim="vim -u $VIMRC"
+alias vim="viasdm -u $VIMRC"
 set -o vi
