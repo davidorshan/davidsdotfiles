@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 export TRACKED=$HOME/davidsdotfiles
-export ITS_ME_DAVID=1
+export LC_ITS_ME_DAVID=1
 VIMRC=$TRACKED/config/vimrc
 alias vim="HOME=$TRACKED/config vim"
 

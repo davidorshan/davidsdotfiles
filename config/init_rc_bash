@@ -1,5 +1,5 @@
 #!/usr/bin/env source
 
-echo "[[ -n \$ITS_ME_DAVID ]] && source \$HOME/davidsdotfiles/config/rc_bash" >> ~/.bashrc
+echo "[[ -n \$LC_ITS_ME_DAVID ]] && source \$HOME/davidsdotfiles/config/rc_bash" >> ~/.bashrc
 #this doesnt work figure out sol in future
 #source $HOME/davidsdotfiles/config/rc_bash
