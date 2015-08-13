@@ -18,6 +18,11 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'ivanov/vim-ipython'
 Plugin 'https://github.com/scrooloose/syntastic.git'
+Plugin 'tpope/vim-surround'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdcommenter'
+"Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 
 "TODO vim +PluginInstall +qall
@@ -34,13 +39,14 @@ filetype on
 filetype plugin on
 filetype indent on
 
+
 " Set to auto read when a file is changed from the outside
 set autoread
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-" let mapleader = ","
-" let g:mapleader = ","
+let mapleader = ","
+let g:mapleader = ","
 "
 " Fast saving
 ":noremap <silent> <C-S> <Esc>:update<CR>
@@ -65,8 +71,9 @@ set wildmenu
 set ruler
 
 " Height of the command bar
-set cmdheight=2
-
+" PUT back in if you disable airline
+"set cmdheight=2
+"
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
@@ -74,7 +81,7 @@ set whichwrap+=<,>,h,l
 " Ignore case when searching
 set ignorecase
 
-" When searching try to be smart about cases 
+" When searching try to be smart about case
 set smartcase
 
 " Highlight search results
@@ -232,9 +239,13 @@ set foldmethod=syntax
 set nosmartindent
 
 " NERDTEE
-nnoremap <silent><C-m> :NERDTreeToggle<CR>
+nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" air
+set laststatus=2
+set ttimeoutlen=50
 
 colors jellybeans
