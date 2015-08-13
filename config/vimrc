@@ -6,6 +6,22 @@ if empty(tracked)
 endif
 let vim_home = $TRACKED . '/config'"
 
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize"
+set rtp+=$TRACKED/config/vim/bundle/Vundle.vim
+call vundle#begin()
+" " alternatively, pass a path where Vundle should install plugins
+" "call vundle#begin('~/some/path/here')
+"
+" " let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'kien/ctrlp.vim'
+call vundle#end()
+
+"TODO vim +PluginInstall +qall
+
 "let $VIMRUNTIME = vim_home . '/.vim'"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -215,3 +231,10 @@ highlight LineNr ctermfg=darkgrey
 set foldmethod=syntax
 
 set nosmartindent
+
+" NERDTEE
+nnoremap <silent><C-m> :NERDTreeToggle<CR>
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
